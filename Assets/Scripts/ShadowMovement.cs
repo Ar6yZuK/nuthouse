@@ -8,6 +8,13 @@ public class ShadowMovement : MonoBehaviour
 	[SerializeField] [CanBeNull] private Door doorToEnter;
 	[SerializeField] private float speed = 3f;
 	
+	[CanBeNull]
+	public Door DoorToEnter
+	{
+		get => doorToEnter;
+		set => doorToEnter = value;
+	}
+	
 	private Rigidbody2D _rb;
 	
 	private void Awake()

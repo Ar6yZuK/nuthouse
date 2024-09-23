@@ -83,3 +83,5 @@ Assets/Plugins/Editor/JetBrains*
 .vscode/
 
 # End of https://www.gitignore.io/api/unity
+
+bin/
