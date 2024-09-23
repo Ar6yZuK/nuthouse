@@ -10,14 +10,12 @@ public class Player : MonoBehaviour
 		if (other.TryGetComponent(out Door door))
 		{
 			_stayWithDoor = door;
-			Debug.Log($"Stay on door {_stayWithDoor?.name}");
 		}
 	}
 	private void OnTriggerExit2D(Collider2D other)
 	{
 		if (other.CompareTag("Door"))
 		{
-			Debug.Log($"Stop stay on door {_stayWithDoor?.name}");
 			_stayWithDoor = null;
 		}
 	}

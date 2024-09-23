@@ -29,15 +29,10 @@ public class Door : MonoBehaviour
 		if (other.CompareTag("Player"))
 			textShownWhenStay.enabled = false;
 	}
-	public void Enter(Player player)
+	public void Enter(Player playerToEnter)
 	{
-		AudioDontDestroy.DoorAudio.Play();
-
-		// When completed we already on new scene. And getting objects from new scene
-		Door doorToEnter = GetDoorById(doorIdToEnter);
-		Debug.Assert(doorToEnter);
-		player.transform.position = doorToEnter.transform.position;
-
+		Enter(playerToEnter.gameObject);
+        
 		cameraToDisable.enabled = false;
 		SetEnabled(GetCameraByTag(cameraTagToEnable), true);
 		return;
@@ -47,6 +42,15 @@ public class Door : MonoBehaviour
 			Debug.Assert(camera);
 			camera.enabled = enabled;
 		}
+	}
+	public void Enter(GameObject objectToEnter)
+    {
+		AudioDontDestroy.DoorAudio.Play();
+
+		// When completed we already on new scene. And getting objects from new scene
+		Door doorToEnter = GetDoorById(doorIdToEnter);
+		Debug.Assert(doorToEnter);
+		objectToEnter.transform.position = doorToEnter.transform.position;
 	}
 	
 	[CanBeNull]

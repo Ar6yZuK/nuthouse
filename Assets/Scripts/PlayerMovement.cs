@@ -14,6 +14,7 @@ public class Movement : MonoBehaviour
 	private void Awake()
 	{
 		_rb = GetComponent<Rigidbody2D>();
+		
 	}
 	
 	private void OnTriggerExit2D(Collider2D other)
